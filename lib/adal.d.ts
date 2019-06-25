@@ -350,6 +350,18 @@ export class AuthenticationContext {
   public acquireTokenWithClientCertificate(resource: string, clientId: string, certificate: string, thumbprint: string, callback: AcquireTokenCallback): void;
 
   /**
+   * Gets a new access token using via a certificate credential.
+   * @param  {string}   resource                            A URI that identifies the resource for which the token is valid.
+   * @param  {string}   clientId                            The OAuth client id of the calling application.
+   * 
+   * @param  {string}   certificate                         A PEM encoded certificate private key.
+   * @param  {string}   thumbprint                          A hex encoded thumbprint of the certificate.
+   * @param  {AcquireTokenCallback}   callback              The callback function.
+   * @param {string}   authorizationCode                   An authorization code returned from a client.
+   */
+  public acquireTokenWithClientCertificateForCode(resource: string, clientId: string, certificate: string, thumbprint: string, callback:AcquireTokenCallback, authorizationCode: string): void {
+
+  /**
    * Gets a new access token using via a device code.
    * @note This method doesn't look up the cache, it only stores the returned token into cache. To look up cache before making a new request, 
    *       please use acquireToken.  
